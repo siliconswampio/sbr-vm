@@ -1,3 +1,3 @@
-[@ethereumjs/vm](../README.md) / runBlockchain
+[@sbr/vm](../README.md) / runBlockchain
 
 # Module: runBlockchain

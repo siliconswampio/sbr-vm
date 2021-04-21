@@ -1,12 +1,12 @@
 import { encode } from 'rlp'
-import { BaseTrie as Trie } from 'merkle-patricia-tree'
-import { Account, Address, BN, intToBuffer } from 'ethereumjs-util'
-import { Block } from '@ethereumjs/block'
+import { BaseTrie as Trie } from 'sbr-merkle-patricia-tree'
+import { Account, Address, BN, intToBuffer } from 'sbr-util'
+import { Block } from '@sbr/block'
 import VM from './index'
 import Bloom from './bloom'
 import { StateManager } from './state'
 import { short } from './evm/opcodes'
-import type { TypedTransaction } from '@ethereumjs/tx'
+import type { TypedTransaction } from '@sbr/tx'
 import type { RunTxResult } from './runTx'
 import type { TxReceipt } from './types'
 import * as DAOConfig from './config/dao_fork_accounts_config.json'
@@ -27,7 +27,7 @@ const DAORefundContract = DAOConfig.DAORefundContract
  */
 export interface RunBlockOpts {
   /**
-   * The @ethereumjs/block to process
+   * The @sbr/block to process
    */
   block: Block
   /**

@@ -1,4 +1,4 @@
-[@ethereumjs/vm](../README.md) / [index](../modules/index.md) / VMOpts
+[@sbr/vm](../README.md) / [index](../modules/index.md) / VMOpts
 
 # Interface: VMOpts
 
@@ -35,7 +35,7 @@ the very first call, which is intended for testing networks.
 
 Default: `false`
 
-Defined in: [index.ts:86](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/index.ts#L86)
+Defined in: [index.ts:86](https://github.com/siliconswampio/sbr-vm/blob/master/lib/index.ts#L86)
 
 ___
 
@@ -48,7 +48,7 @@ contract size limit of 24KB (see [EIP-170](https://git.io/vxZkK)) is bypassed.
 
 Default: `false` [ONLY set to `true` during debugging]
 
-Defined in: [index.ts:93](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/index.ts#L93)
+Defined in: [index.ts:93](https://github.com/siliconswampio/sbr-vm/blob/master/lib/index.ts#L93)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 A [blockchain](https://github.com/ethereumjs/ethereumjs-monorepo/packages/blockchain) object for storing/retrieving blocks
 
-Defined in: [index.ts:73](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/index.ts#L73)
+Defined in: [index.ts:73](https://github.com/siliconswampio/sbr-vm/blob/master/lib/index.ts#L73)
 
 ___
 
@@ -93,7 +93,7 @@ Default setup if no `Common` instance is provided:
 - `hardfork`: `istanbul`
 - `eips`: `[]`
 
-Defined in: [index.ts:60](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/index.ts#L60)
+Defined in: [index.ts:60](https://github.com/siliconswampio/sbr-vm/blob/master/lib/index.ts#L60)
 
 ___
 
@@ -105,7 +105,7 @@ Select hardfork based upon block number. This automatically switches to the righ
 
 Default: `false`
 
-Defined in: [index.ts:100](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/index.ts#L100)
+Defined in: [index.ts:100](https://github.com/siliconswampio/sbr-vm/blob/master/lib/index.ts#L100)
 
 ___
 
@@ -113,11 +113,11 @@ ___
 
 • `Optional` **state**: *any*
 
-An [merkle-patricia-tree](https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/trie) instance for the state tree (ignored if stateManager is passed)
+An [sbr-merkle-patricia-tree](https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/trie) instance for the state tree (ignored if stateManager is passed)
 
 **`deprecated`** 
 
-Defined in: [index.ts:69](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/index.ts#L69)
+Defined in: [index.ts:69](https://github.com/siliconswampio/sbr-vm/blob/master/lib/index.ts#L69)
 
 ___
 
@@ -127,4 +127,4 @@ ___
 
 A [StateManager](state_interface.statemanager.md) instance to use as the state store (Beta API)
 
-Defined in: [index.ts:64](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/index.ts#L64)
+Defined in: [index.ts:64](https://github.com/siliconswampio/sbr-vm/blob/master/lib/index.ts#L64)

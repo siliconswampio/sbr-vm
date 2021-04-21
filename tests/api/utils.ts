@@ -1,10 +1,10 @@
-import { Account, BN } from 'ethereumjs-util'
-import Blockchain from '@ethereumjs/blockchain'
+import { Account, BN } from 'sbr-util'
+import Blockchain from '@sbr/blockchain'
 import VM from '../../lib/index'
 import { VMOpts } from '../../lib'
-import { Block } from '@ethereumjs/block'
-import { TransactionFactory } from '@ethereumjs/tx'
-import Common from '@ethereumjs/common'
+import { Block } from '@sbr/block'
+import { TransactionFactory } from '@sbr/tx'
+import Common from '@sbr/common'
 
 const level = require('level-mem')
 

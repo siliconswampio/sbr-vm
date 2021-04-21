@@ -1,6 +1,6 @@
 import tape from 'tape'
-import { Address, BN } from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+import { Address, BN } from 'sbr-util'
+import Common from '@sbr/common'
 import VM from '../../../lib'
 
 // See https://github.com/holiman/go-ethereum/blob/2c99023b68c573ba24a5b01db13e000bd9b82417/core/vm/testdata/precompiles/modexp_eip2565.json

@@ -1,4 +1,4 @@
-import { Account, Address } from 'ethereumjs-util'
+import { Account, Address } from 'sbr-util'
 const Tree = require('functional-red-black-tree')
 
 /**

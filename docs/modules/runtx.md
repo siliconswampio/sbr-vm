@@ -1,4 +1,4 @@
-[@ethereumjs/vm](../README.md) / runTx
+[@sbr/vm](../README.md) / runTx
 
 # Module: runTx
 
@@ -24,12 +24,12 @@ Returns the tx receipt.
 
 #### Parameters:
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`tx` | TypedTransaction | The transaction   |
-`txResult` | [*RunTxResult*](../interfaces/runtx.runtxresult.md) | The tx result   |
-`blockGasUsed` | BN | The amount of gas used in the block up until this tx    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `tx` | TypedTransaction | The transaction |
+| `txResult` | [*RunTxResult*](../interfaces/runtx.runtxresult.md) | The tx result |
+| `blockGasUsed` | BN | The amount of gas used in the block up until this tx |
 
 **Returns:** *Promise*<[*TxReceipt*](types.md#txreceipt)\>
 
-Defined in: [runTx.ts:418](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/runTx.ts#L418)
+Defined in: [runTx.ts:377](https://github.com/siliconswampio/sbr-vm/blob/master/lib/runTx.ts#L377)

@@ -1,5 +1,5 @@
 const Set = require('core-js-pure/es/set')
-import { SecureTrie as Trie } from 'merkle-patricia-tree'
+import { SecureTrie as Trie } from 'sbr-merkle-patricia-tree'
 import {
   Account,
   Address,
@@ -8,14 +8,14 @@ import {
   keccak256,
   KECCAK256_NULL,
   unpadBuffer,
-} from 'ethereumjs-util'
+} from 'sbr-util'
 import { encode, decode } from 'rlp'
-import Common from '@ethereumjs/common'
-import { genesisStateByName } from '@ethereumjs/common/dist/genesisStates'
+import Common from '@sbr/common'
+import { genesisStateByName } from '@sbr/common/dist/genesisStates'
 import { StateManager, StorageDump } from './interface'
 import Cache from './cache'
 import { getActivePrecompiles, ripemdPrecompileAddress } from '../evm/precompiles'
-import { AccessList, AccessListItem } from '@ethereumjs/tx'
+import { AccessList, AccessListItem } from '@sbr/tx'
 
 type AddressHex = string
 
@@ -28,7 +28,7 @@ export interface DefaultStateManagerOpts {
    */
   common?: Common
   /**
-   * An [`merkle-patricia-tree`](https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/trie) instance
+   * An [`sbr-merkle-patricia-tree`](https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/trie) instance
    */
   trie?: Trie
 }
@@ -669,7 +669,7 @@ export default class DefaultStateManager implements StateManager {
    * @param addressesRemoved - List of addresses to be removed from the final list
    * @param addressesOnlyStorage - List of addresses only to be added in case of present storage slots
    *
-   * @returns - an [@ethereumjs/tx](https://github.com/ethereumjs/ethereumjs-monorepo/packages/tx) `AccessList`
+   * @returns - an [@sbr/tx](https://github.com/ethereumjs/ethereumjs-monorepo/packages/tx) `AccessList`
    */
   generateAccessList(
     addressesRemoved: Address[] = [],

@@ -1,4 +1,4 @@
-import { BN } from 'ethereumjs-util'
+import { BN } from 'sbr-util'
 
 // Mockchain: only used to provide blockhashes for the BLOCKHASH opcode for the VM. Has no other uses.
 export default class Mockchain {

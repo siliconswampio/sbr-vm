@@ -1,7 +1,7 @@
 import tape from 'tape'
-import { toBuffer, bufferToHex } from 'ethereumjs-util'
-import { Transaction } from '@ethereumjs/tx'
-import { Block } from '@ethereumjs/block'
+import { toBuffer, bufferToHex } from 'sbr-util'
+import { Transaction } from '@sbr/tx'
+import { Block } from '@sbr/block'
 import VM from '../../lib/index'
 
 tape('VM events', (t) => {

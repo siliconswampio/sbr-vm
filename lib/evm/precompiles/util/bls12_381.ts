@@ -1,4 +1,4 @@
-import { padToEven, BN } from 'ethereumjs-util'
+import { padToEven, BN } from 'sbr-util'
 import { VmError, ERROR } from '../../../exceptions'
 
 // base field modulus as described in the EIP

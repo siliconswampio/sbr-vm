@@ -1,12 +1,12 @@
 import tape from 'tape'
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 import {
   AccessListEIP2930Transaction,
   AccessListEIP2930TxData,
   Transaction,
   TxData,
-} from '@ethereumjs/tx'
-import { Block, BlockData } from '@ethereumjs/block'
+} from '@sbr/tx'
+import { Block, BlockData } from '@sbr/block'
 
 tape('[Types]', function (t) {
   t.test('should ensure that the actual objects can be safely used as their data types', (st) => {

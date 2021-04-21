@@ -1,11 +1,11 @@
-import { Address, BN, toBuffer } from 'ethereumjs-util'
-import { Block } from '@ethereumjs/block'
+import { Address, BN, toBuffer } from 'sbr-util'
+import { Block } from '@sbr/block'
 import {
   AccessListItem,
   AccessListEIP2930Transaction,
   TypedTransaction,
   AccessList,
-} from '@ethereumjs/tx'
+} from '@sbr/tx'
 import VM from './index'
 import Bloom from './bloom'
 import { default as EVM, EVMResult } from './evm/evm'
@@ -26,7 +26,7 @@ import type {
  */
 export interface RunTxOpts {
   /**
-   * The `@ethereumjs/block` the `tx` belongs to.
+   * The `@sbr/block` the `tx` belongs to.
    * If omitted, a default blank block will be used.
    * To obtain an accurate `TxReceipt`, please pass a block
    * with the header field `gasUsed` set to the value
@@ -34,7 +34,7 @@ export interface RunTxOpts {
    */
   block?: Block
   /**
-   * An `@ethereumjs/tx` to run
+   * An `@sbr/tx` to run
    */
   tx: TypedTransaction
   /**

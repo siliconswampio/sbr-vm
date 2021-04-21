@@ -1,5 +1,5 @@
-import { Account, Address, BN } from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+import { Account, Address, BN } from 'sbr-util'
+import Common from '@sbr/common'
 import { StateManager } from '../state/index'
 import { ERROR, VmError } from '../exceptions'
 import Memory from './memory'

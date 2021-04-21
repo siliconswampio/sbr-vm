@@ -1,6 +1,6 @@
 import tape from 'tape'
-import { BN } from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+import { BN } from 'sbr-util'
+import Common from '@sbr/common'
 import VM from '../../../lib'
 import { ERROR } from '../../../lib/exceptions'
 

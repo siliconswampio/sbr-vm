@@ -1,4 +1,4 @@
-[@ethereumjs/vm](../README.md) / [buildBlock](../modules/buildblock.md) / SealBlockOpts
+[@sbr/vm](../README.md) / [buildBlock](../modules/buildblock.md) / SealBlockOpts
 
 # Interface: SealBlockOpts
 
@@ -22,7 +22,7 @@ Options for sealing a block.
 For PoW, the mixHash.
 Overrides the value passed in the constructor.
 
-Defined in: [buildBlock.ts:46](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/buildBlock.ts#L46)
+Defined in: [buildBlock.ts:46](https://github.com/siliconswampio/sbr-vm/blob/master/lib/buildBlock.ts#L46)
 
 ___
 
@@ -33,4 +33,4 @@ ___
 For PoW, the nonce.
 Overrides the value passed in the constructor.
 
-Defined in: [buildBlock.ts:40](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/buildBlock.ts#L40)
+Defined in: [buildBlock.ts:40](https://github.com/siliconswampio/sbr-vm/blob/master/lib/buildBlock.ts#L40)

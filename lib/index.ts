@@ -1,7 +1,7 @@
-import { SecureTrie as Trie } from 'merkle-patricia-tree'
-import { Account, Address } from 'ethereumjs-util'
-import Blockchain from '@ethereumjs/blockchain'
-import Common from '@ethereumjs/common'
+import { SecureTrie as Trie } from 'sbr-merkle-patricia-tree'
+import { Account, Address } from 'sbr-util'
+import Blockchain from '@sbr/blockchain'
+import Common from '@sbr/common'
 import { StateManager, DefaultStateManager } from './state/index'
 import { default as runCode, RunCodeOpts } from './runCode'
 import { default as runCall, RunCallOpts } from './runCall'
@@ -63,7 +63,7 @@ export interface VMOpts {
    */
   stateManager?: StateManager
   /**
-   * An [merkle-patricia-tree](https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/trie) instance for the state tree (ignored if stateManager is passed)
+   * An [sbr-merkle-patricia-tree](https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/trie) instance for the state tree (ignored if stateManager is passed)
    * @deprecated
    */
   state?: any // TODO
@@ -271,7 +271,7 @@ export default class VM extends AsyncEventEmitter {
    *
    * This method modifies the state.
    *
-   * @param blockchain -  An [@ethereumjs/blockchain](https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/blockchain) object to process
+   * @param blockchain -  An [@sbr/blockchain](https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/blockchain) object to process
    */
   async runBlockchain(blockchain?: Blockchain, maxBlocks?: number): Promise<void | number> {
     await this.init()

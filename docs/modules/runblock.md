@@ -1,4 +1,4 @@
-[@ethereumjs/vm](../README.md) / runBlock
+[@sbr/vm](../README.md) / runBlock
 
 # Module: runBlock
 
@@ -49,14 +49,14 @@ Re-exports: [PreByzantiumTxReceipt](../interfaces/types.prebyzantiumtxreceipt.md
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`minerReward` | BN |
-`ommersNum` | *number* |
+| Name | Type |
+| :------ | :------ |
+| `minerReward` | BN |
+| `ommersNum` | *number* |
 
 **Returns:** BN
 
-Defined in: [runBlock.ts:368](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/runBlock.ts#L368)
+Defined in: [runBlock.ts:315](https://github.com/siliconswampio/sbr-vm/blob/master/lib/runBlock.ts#L315)
 
 ___
 
@@ -68,14 +68,14 @@ Returns the encoded tx receipt.
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`tx` | TypedTransaction |
-`receipt` | [*TxReceipt*](types.md#txreceipt) |
+| Name | Type |
+| :------ | :------ |
+| `tx` | TypedTransaction |
+| `receipt` | [*TxReceipt*](types.md#txreceipt) |
 
 **Returns:** *Buffer*
 
-Defined in: [runBlock.ts:390](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/runBlock.ts#L390)
+Defined in: [runBlock.ts:337](https://github.com/siliconswampio/sbr-vm/blob/master/lib/runBlock.ts#L337)
 
 ___
 
@@ -89,15 +89,15 @@ Generates the tx receipt and returns { txReceipt, encodedReceipt, receiptLog }
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`tx` | TypedTransaction |
-`txRes` | [*RunTxResult*](../interfaces/runtx.runtxresult.md) |
-`blockGasUsed` | BN |
+| Name | Type |
+| :------ | :------ |
+| `tx` | TypedTransaction |
+| `txRes` | [*RunTxResult*](../interfaces/runtx.runtxresult.md) |
+| `blockGasUsed` | BN |
 
 **Returns:** *Promise*<{ `encodedReceipt`: *Buffer* ; `receiptLog`: *string* ; `txReceipt`: [*PreByzantiumTxReceipt*](../interfaces/types.prebyzantiumtxreceipt.md) \| [*PostByzantiumTxReceipt*](../interfaces/types.postbyzantiumtxreceipt.md)  }\>
 
-Defined in: [runBlock.ts:405](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/runBlock.ts#L405)
+Defined in: [runBlock.ts:352](https://github.com/siliconswampio/sbr-vm/blob/master/lib/runBlock.ts#L352)
 
 ___
 
@@ -107,12 +107,12 @@ ___
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`state` | [*StateManager*](../interfaces/state_interface.statemanager.md) |
-`address` | Address |
-`reward` | BN |
+| Name | Type |
+| :------ | :------ |
+| `state` | [*StateManager*](../interfaces/state_interface.statemanager.md) |
+| `address` | Address |
+| `reward` | BN |
 
 **Returns:** *Promise*<Account\>
 
-Defined in: [runBlock.ts:376](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/runBlock.ts#L376)
+Defined in: [runBlock.ts:323](https://github.com/siliconswampio/sbr-vm/blob/master/lib/runBlock.ts#L323)

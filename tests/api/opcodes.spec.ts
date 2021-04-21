@@ -1,5 +1,5 @@
 import tape from 'tape'
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 import VM from '../../lib'
 
 tape('VM -> getActiveOpcodes()', (t) => {

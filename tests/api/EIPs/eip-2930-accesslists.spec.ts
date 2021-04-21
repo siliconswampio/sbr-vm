@@ -1,8 +1,8 @@
 import tape from 'tape'
-import { Account, Address, BN, bufferToHex } from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+import { Account, Address, BN, bufferToHex } from 'sbr-util'
+import Common from '@sbr/common'
 import VM from '../../../lib'
-import { AccessListEIP2930Transaction } from '@ethereumjs/tx'
+import { AccessListEIP2930Transaction } from '@sbr/tx'
 
 const common = new Common({
   eips: [2718, 2929, 2930],

@@ -1,5 +1,5 @@
-import { Block } from '@ethereumjs/block'
-import Blockchain from '@ethereumjs/blockchain'
+import { Block } from '@sbr/block'
+import Blockchain from '@sbr/blockchain'
 import VM from './index'
 
 /**

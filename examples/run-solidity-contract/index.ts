@@ -2,8 +2,8 @@ import assert from 'assert'
 import { join } from 'path'
 import { readFileSync } from 'fs'
 import { defaultAbiCoder as AbiCoder, Interface } from '@ethersproject/abi'
-import { Account, Address, BN } from 'ethereumjs-util'
-import { Transaction } from '@ethereumjs/tx'
+import { Account, Address, BN } from 'sbr-util'
+import { Transaction } from '@sbr/tx'
 import VM from '../../dist'
 const solc = require('solc')
 

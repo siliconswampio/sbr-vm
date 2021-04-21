@@ -1,6 +1,6 @@
 import tape from 'tape'
-import { KECCAK256_RLP } from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+import { KECCAK256_RLP } from 'sbr-util'
+import Common from '@sbr/common'
 import VM from '../../../lib'
 
 tape('General MuirGlacier VM tests', (t) => {

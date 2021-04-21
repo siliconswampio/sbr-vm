@@ -1,6 +1,6 @@
-@ethereumjs/vm
+@sbr/vm
 
-# @ethereumjs/vm
+# @sbr/vm
 
 ## Table of contents
 

@@ -32,7 +32,7 @@ See PR [#1198](https://github.com/ethereumjs/ethereumjs-monorepo/pull/1198).
 
 ### EIP-2930 Tx Access List Generation
 
-This release adds the ability to generate access lists from tx runs with `VM.runTx()`, see PR [#1170](https://github.com/ethereumjs/ethereumjs-monorepo/pull/1170). There is a new option `reportAccessList` which can be used on all tx types to generate an access list as defined by [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) which is then returned along the `VM.runTx()` result adhering to the `@ethereumjs/tx` `AccessList` TypeScript type definition.
+This release adds the ability to generate access lists from tx runs with `VM.runTx()`, see PR [#1170](https://github.com/ethereumjs/ethereumjs-monorepo/pull/1170). There is a new option `reportAccessList` which can be used on all tx types to generate an access list as defined by [EIP-2930](https://eips.ethereum.org/EIPS/eip-2930) which is then returned along the `VM.runTx()` result adhering to the `@sbr/tx` `AccessList` TypeScript type definition.
 
 Note that this functionality needs the new `StateManager.generateAccessList()` function which is not yet part of the `StateManager` interface for compatibility reasons. If you implement an own `StateManager` make sure that this function is present (e.g. by inheriting your `StateManager` from the `DefaultStateManager` implementation).
 
@@ -74,7 +74,7 @@ Please note that the default HF is still set to `istanbul`. You therefore need t
 
 ```typescript
 import VM from '@ethereumjs/vm'
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 const common = new Common({ chain: 'mainnet', hardfork: 'berlin' })
 const vm = new VM({ common })
 ```
@@ -83,7 +83,7 @@ There is a relatively broad set of changes since the last VM version `v5.1.0` in
 
 #### Added Typed Transaction Support (EIP-2718 / EIP-2930)
 
-The VM is now prepared to work with Typed Transactions ([EIP2718](https://eips.ethereum.org/EIPS/eip-2718)) which have been introduced along the `@ethereumjs/tx` `v3.1.0` release. It now therefore gets possible to pass typed txs to `VM.runTx()` respectively a block containing typed txs to `VM.runBlock()`, see PR [#1048](https://github.com/ethereumjs/ethereumjs-monorepo/pull/1048) and PR [#1138](https://github.com/ethereumjs/ethereumjs-monorepo/pull/1138).
+The VM is now prepared to work with Typed Transactions ([EIP2718](https://eips.ethereum.org/EIPS/eip-2718)) which have been introduced along the `@sbr/tx` `v3.1.0` release. It now therefore gets possible to pass typed txs to `VM.runTx()` respectively a block containing typed txs to `VM.runBlock()`, see PR [#1048](https://github.com/ethereumjs/ethereumjs-monorepo/pull/1048) and PR [#1138](https://github.com/ethereumjs/ethereumjs-monorepo/pull/1138).
 
 There is a first concrete tx type 1 including optional access lists added along the `berlin` HF ([EIP2930](https://eips.ethereum.org/EIPS/eip-2930)). Access lists are now properly detected by the VM and gas costs calculated accordingly.
 
@@ -113,10 +113,10 @@ The `StateManager` base interface and the inherited `EIP2929StateManager` interf
 
 If you are using this library in conjunction with other EthereumJS libraries make sure to minimally have the following library versions installed for typed transaction support:
 
-- `@ethereumjs/common` `v2.2.0`
-- `@ethereumjs/tx` `v3.1.0`
-- `@ethereumjs/block` `v3.2.0`
-- `@ethereumjs/blockchain` `v5.2.0`
+- `@sbr/common` `v2.2.0`
+- `@sbr/tx` `v3.1.0`
+- `@sbr/block` `v3.2.0`
+- `@sbr/blockchain` `v5.2.0`
 - `@ethereumjs/vm` `v5.2.0`
 
 ### Other Features
@@ -143,7 +143,7 @@ Here is a simple example:
 
 ```typescript
 import VM from '@ethereumjs/vm'
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 
 const common = new Common({ chain: 'goerli' })
 const hardforkByBlockNumber = true
@@ -156,9 +156,9 @@ const result = await vm.runBlock(block)
 
 All the corresponding internal dependencies have been updated to Clique/PoA supporting versions, namely:
 
-- @ethereumjs/block -> `v3.1.0`
-- @ethereumjs/blockchain -> `v5.1.0`
-- @ethereumjs/common" -> `v2.1.0`
+- @sbr/block -> `v3.1.0`
+- @sbr/blockchain -> `v5.1.0`
+- @sbr/common" -> `v2.1.0`
 
 Note that you need to also use library versions equal or higher than the ones mentioned above when you pass in an instance from one of the libraries to an API call (e.g. `VM.runBlock()`, see example above) to ensure everything is working properly in a Clique/PoA context.
 
@@ -171,7 +171,7 @@ New VM behavior in a Clique/PoA context:
 
 ### StateManager Checkpointing Performance
 
-This is the first release which reliably exposes performance gains on all checkpointing operations by integrating the respective `merkle-patricia-trie` [v4.1.0](https://github.com/ethereumjs/ethereumjs-monorepo/releases/tag/merkle-patricia-tree%404.1.0) where the checkpointing mechanism has been reworked substantially.
+This is the first release which reliably exposes performance gains on all checkpointing operations by integrating the respective `merkle-patricia-trie` [v4.1.0](https://github.com/ethereumjs/ethereumjs-monorepo/releases/tag/sbr-merkle-patricia-tree%404.1.0) where the checkpointing mechanism has been reworked substantially.
 
 This leads to linearly growing performance gains on all checkpointing operations (in `VM.runBlock()`, `VM.runTx()` as well as along all `message` calls) along with the size of the trie (state) being operated upon. In practice we have seen 10-50x increases when working on blocks from `mainnet` or the other test networks.
 
@@ -243,7 +243,7 @@ A VM with the specific HF rules (on the chain provided) can be instantiated by p
 
 ```typescript
 import VM from '@ethereumjs/vm'
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 
 const common = new Common({ chain: 'mainnet', hardfork: 'spuriousDragon' })
 const vm = new VM({ common })
@@ -268,7 +268,7 @@ These integrations come along with an API addition to the VM to support the acti
 This API can be used as follows:
 
 ```typescript
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 import VM from '@ethereumjs/vm'
 
 const common = new Common({ chain: 'mainnet', eips: [2537] })
@@ -279,9 +279,9 @@ const vm = new VM({ common })
 
 The following `EthereumJS` libraries which are used within the VM internally and can be passed in on instantiation have been updated to new major versions.
 
-- `merkle-patricia-tree` `v3` (VM option `state`) -> `merkle-patricia-tree` `v4`, PR [#787](https://github.com/ethereumjs/ethereumjs-monorepo/pull/787)
-- `ethereumjs-blockchain` `v4`-> `@ethereumjs/blockchain` `v5`, PR [#833](https://github.com/ethereumjs/ethereumjs-monorepo/pull/833)
-- `ethereumjs-common` `v1` -> `@ethereumjs/common` `v2`
+- `sbr-merkle-patricia-tree` `v3` (VM option `state`) -> `sbr-merkle-patricia-tree` `v4`, PR [#787](https://github.com/ethereumjs/ethereumjs-monorepo/pull/787)
+- `ethereumjs-blockchain` `v4`-> `@sbr/blockchain` `v5`, PR [#833](https://github.com/ethereumjs/ethereumjs-monorepo/pull/833)
+- `ethereumjs-common` `v1` -> `@sbr/common` `v2`
 
 **Breaking**: If you pass in instances of these libraries to the VM please make sure to update these library versions as stated. Please also take a note on the package name changes!
 
@@ -294,15 +294,15 @@ using a custom `StateManager` you can use this interface to get better assurance
 
 The integration of this new interface is highly encouraged since this release also comes with `StateManager` API changes. Usage of the old
 [ethereumjs-account](https://github.com/ethereumjs/ethereumjs-account) package (this package will be retired) has been replaced by the new
-[Account class](https://github.com/ethereumjs/ethereumjs-util/blob/master/docs/modules/_account_.md) from the `ethereumjs-util` package. This affects all `Account` related `StateManager` methods, see PR [#911](https://github.com/ethereumjs/ethereumjs-monorepo/pull/911).
+[Account class](https://github.com/ethereumjs/sbr-util/blob/master/docs/modules/_account_.md) from the `sbr-util` package. This affects all `Account` related `StateManager` methods, see PR [#911](https://github.com/ethereumjs/ethereumjs-monorepo/pull/911).
 
-The Util package also introduces a new  [Address class](https://github.com/ethereumjs/ethereumjs-util/blob/master/docs/modules/_address_.md). This class replaces all current `Buffer` inputs on `StateManager` methods representing an address.
+The Util package also introduces a new  [Address class](https://github.com/ethereumjs/sbr-util/blob/master/docs/modules/_address_.md). This class replaces all current `Buffer` inputs on `StateManager` methods representing an address.
 
 ### Dual ES5 and ES2017 Builds
 
 We significantly updated our internal tool and CI setup along the work on PR [#913](https://github.com/ethereumjs/ethereumjs-monorepo/pull/913) with an update to `ESLint` from `TSLint` for code linting and formatting and the introduction of a new build setup.
 
-Packages now target `ES2017` for Node.js builds (the `main` entrypoint from `package.json`) and introduce a separate `ES5` build distributed along using the `browser` directive as an entrypoint, see PR [#921](https://github.com/ethereumjs/ethereumjs-monorepo/pull/921). This will result in performance benefits for Node.js consumers, see [here](https://github.com/ethereumjs/merkle-patricia-tree/pull/117) for a releated discussion.
+Packages now target `ES2017` for Node.js builds (the `main` entrypoint from `package.json`) and introduce a separate `ES5` build distributed along using the `browser` directive as an entrypoint, see PR [#921](https://github.com/ethereumjs/ethereumjs-monorepo/pull/921). This will result in performance benefits for Node.js consumers, see [here](https://github.com/ethereumjs/sbr-merkle-patricia-tree/pull/117) for a releated discussion.
 
 ### Other Changes
 
@@ -311,13 +311,13 @@ Packages now target `ES2017` for Node.js builds (the `main` entrypoint from `pac
 - Group opcodes based upon hardfork, PR [#798](https://github.com/ethereumjs/ethereumjs-monorepo/pull/798)
 - Split opcodes logic into codes, fns, and utils files, PR [#896](https://github.com/ethereumjs/ethereumjs-monorepo/pull/896)
 - Group precompiles based upon hardfork, PR [#783](https://github.com/ethereumjs/ethereumjs-monorepo/pull/783)
-- **Breaking:** the `step` event now emits an `ethereumjs-util` [Account](https://github.com/ethereumjs/ethereumjs-util/blob/master/docs/modules/_account_.md) object instead of an [ethereumjs-account](https://github.com/ethereumjs/ethereumjs-account)
+- **Breaking:** the `step` event now emits an `sbr-util` [Account](https://github.com/ethereumjs/sbr-util/blob/master/docs/modules/_account_.md) object instead of an [ethereumjs-account](https://github.com/ethereumjs/ethereumjs-account)
 (package retired) object
-- **Breaking:** `NewContractEvent` now emits an `address` of type `Address` (see `ethereumjs-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
-- **Breaking:** `EVMResult` now returns a `createdAddress` of type `Address` (see `ethereumjs-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
-- **Breaking:** `RunTxResult` now returns a `createdAddress` of type `Address` (see `ethereumjs-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
-- **Breaking:** `RunCallOpts` now expects `origin`, `caller` and `to` inputs to be of type `Address` (see `ethereumjs-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
-- **Breaking:** `RunCodeOpts` now expects `origin`, `caller` and `address` inputs to be of type `Address` (see `ethereumjs-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
+- **Breaking:** `NewContractEvent` now emits an `address` of type `Address` (see `sbr-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
+- **Breaking:** `EVMResult` now returns a `createdAddress` of type `Address` (see `sbr-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
+- **Breaking:** `RunTxResult` now returns a `createdAddress` of type `Address` (see `sbr-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
+- **Breaking:** `RunCallOpts` now expects `origin`, `caller` and `to` inputs to be of type `Address` (see `sbr-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
+- **Breaking:** `RunCodeOpts` now expects `origin`, `caller` and `address` inputs to be of type `Address` (see `sbr-util`) instead of a `Buffer`, PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
 - Visibility cleanup (Renaming and/or code docs additions) for class members not being part of the API, PR [#925](https://github.com/ethereumjs/ethereumjs-monorepo/pull/925)
 - Make `memory.ts` use Buffers instead of Arrays, PR [#850](https://github.com/ethereumjs/ethereumjs-monorepo/pull/850)
 - Use `Map` for `OpcodeList` and `opcode` handlers, PR [#852](https://github.com/ethereumjs/ethereumjs-monorepo/pull/852)
@@ -325,7 +325,7 @@ Packages now target `ES2017` for Node.js builds (the `main` entrypoint from `pac
 - Moved gas base fees from VM to Common, PR [#806](https://github.com/ethereumjs/ethereumjs-monorepo/pull/806)
 - Return precompiles on `getPrecompile()` based on hardfork, PR [#783](https://github.com/ethereumjs/ethereumjs-monorepo/pull/783)
 - Removed `async` dependency, PR [#779](https://github.com/ethereumjs/ethereumjs-monorepo/pull/779)
-- Updated `ethereumjs-util` to v7, PR [#748](https://github.com/ethereumjs/ethereumjs-monorepo/pull/748)
+- Updated `sbr-util` to v7, PR [#748](https://github.com/ethereumjs/ethereumjs-monorepo/pull/748)
 
 **CI and Test Improvements**
 
@@ -396,7 +396,7 @@ by passing in a `Common` instance:
 
 ```typescript
 import VM from '@ethereumjs/vm'
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 
 const common = new Common({ chain: 'mainnet', hardfork: 'spuriousDragon' })
 const vm = new VM({ common })
@@ -438,7 +438,7 @@ PR [#872](https://github.com/ethereumjs/ethereumjs-monorepo/pull/872).
 This API can be used as follows:
 
 ```typescript
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 import VM from '@ethereumjs/vm'
 
 const common = new Common({ chain: 'mainnet', eips: [2537] })
@@ -450,11 +450,11 @@ const vm = new VM({ common })
 The following `EthereumJS` libraries which are used within the VM internally
 and can be passed in on instantiation have been updated to new major versions.
 
-- `merkle-patricia-tree` `v3` (VM option `state`) -> `merkle-patricia-tree` `v4`,
+- `sbr-merkle-patricia-tree` `v3` (VM option `state`) -> `sbr-merkle-patricia-tree` `v4`,
   PR [#787](https://github.com/ethereumjs/ethereumjs-monorepo/pull/787)
-- `ethereumjs-blockchain` `v4`-> `@ethereumjs/blockchain` `v5`,
+- `ethereumjs-blockchain` `v4`-> `@sbr/blockchain` `v5`,
   PR [#833](https://github.com/ethereumjs/ethereumjs-monorepo/pull/833)
-- `ethereumjs-common` `v1` -> `@ethereumjs/common` `v2`
+- `ethereumjs-common` `v1` -> `@sbr/common` `v2`
 
 **Breaking**: If you pass in instances of these libraries to the VM please make sure to
 update these library versions as stated. Please also take a note on the
@@ -475,12 +475,12 @@ The integration of this new interface is highly encouraged since this release
 also comes with `StateManager` API changes. Usage of the old
 [ethereumjs-account](https://github.com/ethereumjs/ethereumjs-account) package
 (this package will be retired) has been replaced by the new
-[Account class](https://github.com/ethereumjs/ethereumjs-util/blob/master/docs/modules/_account_.md)
-from the `ethereumjs-util` package. This affects all `Account` related
+[Account class](https://github.com/ethereumjs/sbr-util/blob/master/docs/modules/_account_.md)
+from the `sbr-util` package. This affects all `Account` related
 `StateManager` methods, see PR [#911](https://github.com/ethereumjs/ethereumjs-monorepo/pull/911).
 
 The Util package also introduces a new 
-[Address class](https://github.com/ethereumjs/ethereumjs-util/blob/master/docs/modules/_address_.md).
+[Address class](https://github.com/ethereumjs/sbr-util/blob/master/docs/modules/_address_.md).
 This class replaces all current `Buffer` inputs on `StateManager` methods representing an address.
 
 ### Dual ES5 and ES2017 Builds
@@ -492,7 +492,7 @@ for code linting and formatting and the introduction of a new build setup.
 Packages now target `ES2017` for Node.js builds (the `main` entrypoint from `package.json`) and introduce
 a separate `ES5` build distributed along using the `browser` directive as an entrypoint, see
 PR [#921](https://github.com/ethereumjs/ethereumjs-monorepo/pull/921). This will result
-in performance benefits for Node.js consumers, see [here](https://github.com/ethereumjs/merkle-patricia-tree/pull/117) for a releated discussion.
+in performance benefits for Node.js consumers, see [here](https://github.com/ethereumjs/sbr-merkle-patricia-tree/pull/117) for a releated discussion.
 
 ### Other Changes
 
@@ -504,26 +504,26 @@ in performance benefits for Node.js consumers, see [here](https://github.com/eth
   PR [#896](https://github.com/ethereumjs/ethereumjs-monorepo/pull/896)
 - Group precompiles based upon hardfork,
   PR [#783](https://github.com/ethereumjs/ethereumjs-monorepo/pull/783)
-- **Breaking:** the `step` event now emits an `ethereumjs-util`
-[Account](https://github.com/ethereumjs/ethereumjs-util/blob/master/docs/modules/_account_.md)
+- **Breaking:** the `step` event now emits an `sbr-util`
+[Account](https://github.com/ethereumjs/sbr-util/blob/master/docs/modules/_account_.md)
 object instead of an [ethereumjs-account](https://github.com/ethereumjs/ethereumjs-account)
 (package retired) object
 - **Breaking:** `NewContractEvent` now emits an `address` of 
-  type `Address` (see `ethereumjs-util`) instead of a `Buffer`,
+  type `Address` (see `sbr-util`) instead of a `Buffer`,
   PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
 - **Breaking:** `EVMResult` now returns a `createdAddress` of
-  type `Address` (see `ethereumjs-util`) instead of a `Buffer`,
+  type `Address` (see `sbr-util`) instead of a `Buffer`,
   PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
 - **Breaking:** `RunTxResult` now returns a `createdAddress` of
-  type `Address` (see `ethereumjs-util`) instead of a `Buffer`,
+  type `Address` (see `sbr-util`) instead of a `Buffer`,
   PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
 - **Breaking:** `RunCallOpts` now expects `origin`, `caller` and
   `to` inputs to be of
-  type `Address` (see `ethereumjs-util`) instead of a `Buffer`,
+  type `Address` (see `sbr-util`) instead of a `Buffer`,
   PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
 - **Breaking:** `RunCodeOpts` now expects `origin`, `caller` and
   `address` inputs to be of
-  type `Address` (see `ethereumjs-util`) instead of a `Buffer`,
+  type `Address` (see `sbr-util`) instead of a `Buffer`,
   PR [#919](https://github.com/ethereumjs/ethereumjs-monorepo/pull/919)
 - Make `memory.ts` use Buffers instead of Arrays,
   PR [#850](https://github.com/ethereumjs/ethereumjs-monorepo/pull/850)
@@ -537,7 +537,7 @@ object instead of an [ethereumjs-account](https://github.com/ethereumjs/ethereum
   PR [#783](https://github.com/ethereumjs/ethereumjs-monorepo/pull/783)
 - Removed `async` dependency,
   PR [#779](https://github.com/ethereumjs/ethereumjs-monorepo/pull/779)
-- Updated `ethereumjs-util` to v7,
+- Updated `sbr-util` to v7,
   PR [#748](https://github.com/ethereumjs/ethereumjs-monorepo/pull/748)
 
 **CI and Test Improvements**
@@ -632,7 +632,7 @@ dependencies:
 
 Other changes:
 
-- Upgraded `ethereumjs-util` to `v6.2.0`,
+- Upgraded `sbr-util` to `v6.2.0`,
   PR [#621](https://github.com/ethereumjs/ethereumjs-monorepo/pull/621)
 - Removed outdated cb param definition in `runBlockchain`,
   PR [#623](https://github.com/ethereumjs/ethereumjs-monorepo/pull/623)
@@ -665,7 +665,7 @@ you upgrade from the first `beta` `Istanbul` release `v4.1.0`.
   see [EIP issue #716](https://github.com/ethereum/EIPs/issues/716) for context
 - Updated `ethereumjs-block` to `v2.2.1`
 - Updated `ethereumjs-blockchain` to `v4.0.2`
-- Limited `ethereumjs-util` from `^6.1.0` to `~6.1.0`
+- Limited `sbr-util` from `^6.1.0` to `~6.1.0`
 - Hardfork-related fixes in test runners and test utilities
 
 **Other Changes**
@@ -1231,7 +1231,7 @@ On the documentation side the API documentation has also been consolidated and t
 Some bug fix and maintenance updates:
 
 - Fix error handling in `fakeBlockChain`, see PR [#320](https://github.com/ethereumjs/ethereumjs-monorepo/pull/320)
-- Update of `ethereumjs-util` to [v6.0.0](https://github.com/ethereumjs/ethereumjs-util/releases/tag/v6.0.0), see PR [#369](https://github.com/ethereumjs/ethereumjs-monorepo/pull/369)
+- Update of `sbr-util` to [v6.0.0](https://github.com/ethereumjs/sbr-util/releases/tag/v6.0.0), see PR [#369](https://github.com/ethereumjs/ethereumjs-monorepo/pull/369)
 
 ### Thank You
 
@@ -1283,7 +1283,7 @@ All the changes from this release:
 - Usage of the latest `rustbn.js` API, see PR [#312](https://github.com/ethereumjs/ethereumjs-monorepo/pull/312)
 - Some cleanup in precompile error handling, see PR [#318](https://github.com/ethereumjs/ethereumjs-monorepo/pull/318)
 - Some cleanup for `StateManager`, see PR [#266](https://github.com/ethereumjs/ethereumjs-monorepo/pull/266)
-- Renaming of `util.sha3` usages to `util.keccak256` and bump `ethereumjs-util` to `v5.2.0` (you should do to if you use `ethereumjs-util`)
+- Renaming of `util.sha3` usages to `util.keccak256` and bump `sbr-util` to `v5.2.0` (you should do to if you use `sbr-util`)
 - Parallel testing of the`Byzantium` and `Constantinople` state tests, see PR [#317](https://github.com/ethereumjs/ethereumjs-monorepo/pull/317)
 - For lower build times our CI configuration now runs solely on `CircleCI` and support for `Travis` have been dropped, see PR [#316](https://github.com/ethereumjs/ethereumjs-monorepo/pull/316)
 
@@ -1324,7 +1324,7 @@ All the changes from this release:
 - Keep stack items as bn.js instances (arithmetic performance increases), PRs [#159](https://github.com/ethereumjs/ethereumjs-monorepo/pull/159), [#254](https://github.com/ethereumjs/ethereumjs-monorepo/pull/254) and [#256](https://github.com/ethereumjs/ethereumjs-monorepo/pull/256)
 - More consistent VM error handling, PR [#219](https://github.com/ethereumjs/ethereumjs-monorepo/pull/219)
 - Validate stack items after operations, PR [#222](https://github.com/ethereumjs/ethereumjs-monorepo/pull/222)
-- Updated `ethereumjs-util` dependency from `4.5.0` to `5.1.x`, PR [#241](https://github.com/ethereumjs/ethereumjs-monorepo/pull/241)
+- Updated `sbr-util` dependency from `4.5.0` to `5.1.x`, PR [#241](https://github.com/ethereumjs/ethereumjs-monorepo/pull/241)
 - Fixed child contract deletion bug, PR [#246](https://github.com/ethereumjs/ethereumjs-monorepo/pull/246)
 - Fixed a bug associated with direct stack usage, PR [#240](https://github.com/ethereumjs/ethereumjs-monorepo/pull/240)
 - Fix error on large return fees, PR [#235](https://github.com/ethereumjs/ethereumjs-monorepo/pull/235)

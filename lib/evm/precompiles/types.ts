@@ -1,5 +1,5 @@
-import { BN } from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+import { BN } from 'sbr-util'
+import Common from '@sbr/common'
 import { ExecResult } from '../evm'
 import VM from '../../index'
 

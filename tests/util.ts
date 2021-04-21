@@ -7,10 +7,10 @@ import {
   stripHexPrefix,
   setLengthLeft,
   toBuffer,
-} from 'ethereumjs-util'
-import { AccessListEIP2930Transaction, Transaction, TxOptions } from '@ethereumjs/tx'
-import { Block, BlockHeader, BlockOptions } from '@ethereumjs/block'
-import Common from '@ethereumjs/common'
+} from 'sbr-util'
+import { AccessListEIP2930Transaction, Transaction, TxOptions } from '@sbr/tx'
+import { Block, BlockHeader, BlockOptions } from '@sbr/block'
+import Common from '@sbr/common'
 
 export function dumpState(state: any, cb: Function) {
   function readAccounts(state: any) {
@@ -95,7 +95,7 @@ const format = (exports.format = function (
 /**
  * Make a tx using JSON from tests repo
  * @param {Object} txData The tx object from tests repo
- * @param {TxOptions} opts Tx opts that can include an @ethereumjs/common object
+ * @param {TxOptions} opts Tx opts that can include an @sbr/common object
  * @returns {Transaction} Transaction to be passed to VM.runTx function
  */
 export function makeTx(txData: any, opts?: TxOptions) {

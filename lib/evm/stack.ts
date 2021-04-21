@@ -1,4 +1,4 @@
-import { BN, MAX_INTEGER } from 'ethereumjs-util'
+import { BN, MAX_INTEGER } from 'sbr-util'
 const { ERROR, VmError } = require('../exceptions')
 
 /**

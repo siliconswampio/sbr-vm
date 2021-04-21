@@ -1,5 +1,5 @@
 import tape from 'tape'
-import { BN } from 'ethereumjs-util'
+import { BN } from 'sbr-util'
 import VM from '../../lib'
 
 const STOP = '00'

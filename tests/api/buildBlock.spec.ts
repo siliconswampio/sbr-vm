@@ -1,10 +1,10 @@
 import tape from 'tape'
-import { Account, Address } from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+import { Account, Address } from 'sbr-util'
+import Common from '@sbr/common'
 import VM from '../../lib'
-import { Block } from '@ethereumjs/block'
-import { Transaction } from '@ethereumjs/tx'
-import Blockchain from '@ethereumjs/blockchain'
+import { Block } from '@sbr/block'
+import { Transaction } from '@sbr/tx'
+import Blockchain from '@sbr/blockchain'
 
 tape('BlockBuilder', async (t) => {
   t.test('should build a valid block', async (st) => {

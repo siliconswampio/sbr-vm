@@ -1,7 +1,7 @@
-import { Account, Address, toBuffer, setLengthLeft } from 'ethereumjs-util'
-import { Block } from '@ethereumjs/block'
-import Blockchain from '@ethereumjs/blockchain'
-import Common from '@ethereumjs/common'
+import { Account, Address, toBuffer, setLengthLeft } from 'sbr-util'
+import { Block } from '@sbr/block'
+import Blockchain from '@sbr/blockchain'
+import Common from '@sbr/common'
 import VM from '../../'
 
 const testData = require('./test-data')

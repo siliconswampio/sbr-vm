@@ -1,5 +1,5 @@
-import { Account, Address } from 'ethereumjs-util'
-import { AccessList } from '@ethereumjs/tx'
+import { Account, Address } from 'sbr-util'
+import { AccessList } from '@sbr/tx'
 
 /**
  * Storage values of an account

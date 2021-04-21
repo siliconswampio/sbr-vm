@@ -1,4 +1,4 @@
-import { Address, BN } from 'ethereumjs-util'
+import { Address, BN } from 'sbr-util'
 
 export default class TxContext {
   gasPrice: BN

@@ -1,4 +1,4 @@
-import { setLengthRight, BN } from 'ethereumjs-util'
+import { setLengthRight, BN } from 'sbr-util'
 import { PrecompileInput } from './types'
 import { OOGResult, ExecResult } from '../evm'
 const assert = require('assert')
@@ -127,7 +127,7 @@ export default function (opts: PrecompileInput): ExecResult {
   }
 
   const maxInt = new BN(Number.MAX_SAFE_INTEGER)
-  const maxSize = new BN(2147483647) // ethereumjs-util setLengthRight limitation
+  const maxSize = new BN(2147483647) // sbr-util setLengthRight limitation
 
   if (bLen.gt(maxSize) || eLen.gt(maxSize) || mLen.gt(maxSize)) {
     return OOGResult(opts.gasLimit)

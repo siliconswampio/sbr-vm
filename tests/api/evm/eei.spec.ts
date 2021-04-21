@@ -1,5 +1,5 @@
 import tape from 'tape'
-import { Account, Address } from 'ethereumjs-util'
+import { Account, Address } from 'sbr-util'
 import EEI from '../../../lib/evm/eei'
 import StateManager from '../../../lib/state/stateManager'
 

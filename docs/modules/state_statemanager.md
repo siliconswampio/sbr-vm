@@ -1,4 +1,4 @@
-[@ethereumjs/vm](../README.md) / state/stateManager
+[@sbr/vm](../README.md) / state/stateManager
 
 # Module: state/stateManager
 

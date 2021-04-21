@@ -8,8 +8,8 @@ import {
   KECCAK256_RLP,
   unpadBuffer,
   zeros,
-} from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+} from 'sbr-util'
+import Common from '@sbr/common'
 import { DefaultStateManager } from '../../../lib/state'
 import { createAccount } from '../utils'
 import { isRunningInKarma } from '../../util'

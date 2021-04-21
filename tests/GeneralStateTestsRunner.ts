@@ -1,7 +1,7 @@
 import * as tape from 'tape'
-import { SecureTrie as Trie } from 'merkle-patricia-tree'
-import { Account, BN, toBuffer } from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+import { SecureTrie as Trie } from 'sbr-merkle-patricia-tree'
+import { Account, BN, toBuffer } from 'sbr-util'
+import Common from '@sbr/common'
 import { setupPreConditions, makeTx, makeBlockFromEnv } from './util'
 import { InterpreterStep } from '../lib/evm/interpreter'
 

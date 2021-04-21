@@ -1,4 +1,4 @@
-import { Address, BN } from 'ethereumjs-util'
+import { Address, BN } from 'sbr-util'
 import { PrecompileFunc } from './precompiles'
 
 export default class Message {

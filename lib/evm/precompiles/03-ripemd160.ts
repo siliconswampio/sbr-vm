@@ -1,4 +1,4 @@
-import { ripemd160, BN } from 'ethereumjs-util'
+import { ripemd160, BN } from 'sbr-util'
 import { PrecompileInput } from './types'
 import { OOGResult, ExecResult } from '../evm'
 const assert = require('assert')

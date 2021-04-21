@@ -1,4 +1,4 @@
-[@ethereumjs/vm](../README.md) / [exceptions](../modules/exceptions.md) / VmError
+[@sbr/vm](../README.md) / [exceptions](../modules/exceptions.md) / VmError
 
 # Class: VmError
 
@@ -23,13 +23,13 @@
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`error` | [*ERROR*](../enums/exceptions.error.md) |
+| Name | Type |
+| :------ | :------ |
+| `error` | [*ERROR*](../enums/exceptions.error.md) |
 
 **Returns:** [*VmError*](exceptions.vmerror.md)
 
-Defined in: [exceptions.ts:29](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/exceptions.ts#L29)
+Defined in: [exceptions.ts:29](https://github.com/siliconswampio/sbr-vm/blob/master/lib/exceptions.ts#L29)
 
 ## Properties
 
@@ -37,7 +37,7 @@ Defined in: [exceptions.ts:29](https://github.com/ethereumjs/ethereumjs-monorepo
 
 • **error**: [*ERROR*](../enums/exceptions.error.md)
 
-Defined in: [exceptions.ts:28](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/exceptions.ts#L28)
+Defined in: [exceptions.ts:28](https://github.com/siliconswampio/sbr-vm/blob/master/lib/exceptions.ts#L28)
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **errorType**: *string*
 
-Defined in: [exceptions.ts:29](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/exceptions.ts#L29)
+Defined in: [exceptions.ts:29](https://github.com/siliconswampio/sbr-vm/blob/master/lib/exceptions.ts#L29)

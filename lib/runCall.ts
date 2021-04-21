@@ -1,5 +1,5 @@
-import { Address, BN } from 'ethereumjs-util'
-import { Block } from '@ethereumjs/block'
+import { Address, BN } from 'sbr-util'
+import { Block } from '@sbr/block'
 import VM from './index'
 import TxContext from './evm/txContext'
 import Message from './evm/message'

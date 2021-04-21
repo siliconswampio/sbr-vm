@@ -1,7 +1,7 @@
 import tape from 'tape'
-import { BN } from 'ethereumjs-util'
+import { BN } from 'sbr-util'
 import VM from '../../../lib'
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 
 tape('Berlin: EIP 2315 tests', (t) => {
   const common = new Common({ chain: 'mainnet', hardfork: 'berlin', eips: [2315] })

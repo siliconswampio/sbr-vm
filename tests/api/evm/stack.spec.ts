@@ -1,5 +1,5 @@
 import tape from 'tape'
-import { Address, BN } from 'ethereumjs-util'
+import { Address, BN } from 'sbr-util'
 import VM from '../../../lib'
 import Stack from '../../../lib/evm/stack'
 import { createAccount } from '../utils'

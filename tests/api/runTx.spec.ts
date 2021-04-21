@@ -1,8 +1,8 @@
 import tape from 'tape'
-import { Account, Address, BN, MAX_INTEGER } from 'ethereumjs-util'
-import { Block } from '@ethereumjs/block'
-import Common from '@ethereumjs/common'
-import { Transaction, TransactionFactory } from '@ethereumjs/tx'
+import { Account, Address, BN, MAX_INTEGER } from 'sbr-util'
+import { Block } from '@sbr/block'
+import Common from '@sbr/common'
+import { Transaction, TransactionFactory } from '@sbr/tx'
 import VM from '../../lib'
 import { createAccount, getTransaction } from './utils'
 

@@ -43,18 +43,18 @@
     "tsc": "ethereumjs-config-tsc"
   },
   "dependencies": {
-    "@ethereumjs/block": "^3.2.1",
-    "@ethereumjs/blockchain": "^5.2.1",
-    "@ethereumjs/common": "^2.2.0",
-    "merkle-patricia-tree": "^4.1.0",
-    "@ethereumjs/tx": "^3.1.3",
+    "@sbr/block": "git+https://github.com/siliconswampio/sbr-block.git",
+    "@sbr/blockchain": "git+https://github.com/siliconswampio/sbr-blockchain.git",
+    "@sbr/common": "git+https://github.com/siliconswampio/sbr-common.git",
+    "@sbr/tx": "git+https://github.com/siliconswampio/sbr-tx.git",
     "async-eventemitter": "^0.2.4",
     "core-js-pure": "^3.0.1",
     "debug": "^2.2.0",
-    "ethereumjs-util": "^7.0.10",
     "functional-red-black-tree": "^1.0.1",
     "mcl-wasm": "^0.7.1",
     "rustbn.js": "~0.2.0",
+    "sbr-merkle-patricia-tree": "git+https://github.com/siliconswampio/sbr-merkle-patricia-tree.git",
+    "sbr-util": "git+https://github.com/siliconswampio/sbr-util.git",
     "util.promisify": "^1.0.1"
   },
   "devDependencies": {

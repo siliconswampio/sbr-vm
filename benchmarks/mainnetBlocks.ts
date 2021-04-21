@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs'
 import Benchmark = require('benchmark')
-import Common from '@ethereumjs/common'
-import { Block } from '@ethereumjs/block'
-import blockFromRPC from '@ethereumjs/block/dist/from-rpc'
+import Common from '@sbr/common'
+import { Block } from '@sbr/block'
+import blockFromRPC from '@sbr/block/dist/from-rpc'
 import VM from '../dist'
 import { getPreState, getBlockchain, verifyResult } from './util'
 

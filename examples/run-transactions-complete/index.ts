@@ -1,5 +1,5 @@
-import { Address, Account, BN, toBuffer, pubToAddress } from 'ethereumjs-util'
-import { Transaction, TxData } from '@ethereumjs/tx'
+import { Address, Account, BN, toBuffer, pubToAddress } from 'sbr-util'
+import { Transaction, TxData } from '@sbr/tx'
 import VM from '../..'
 
 async function main() {

@@ -1,4 +1,4 @@
-import { BN } from 'ethereumjs-util'
+import { BN } from 'sbr-util'
 import { RunState } from './../interpreter'
 import { ERROR } from '../../exceptions'
 import { adjustSstoreGasEIP2929 } from './EIP2929'

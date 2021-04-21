@@ -1,10 +1,10 @@
 import * as tape from 'tape'
-import { addHexPrefix, BN, toBuffer } from 'ethereumjs-util'
-import { SecureTrie as Trie } from 'merkle-patricia-tree'
-import { Block } from '@ethereumjs/block'
-import Blockchain from '@ethereumjs/blockchain'
+import { addHexPrefix, BN, toBuffer } from 'sbr-util'
+import { SecureTrie as Trie } from 'sbr-merkle-patricia-tree'
+import { Block } from '@sbr/block'
+import Blockchain from '@sbr/blockchain'
 import { setupPreConditions, verifyPostConditions } from './util'
-import Common from '@ethereumjs/common'
+import Common from '@sbr/common'
 
 const level = require('level')
 const levelMem = require('level-mem')

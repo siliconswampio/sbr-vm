@@ -1,4 +1,4 @@
-import { Address, BN } from 'ethereumjs-util'
+import { Address, BN } from 'sbr-util'
 import { EIP2929StateManager } from '../../state/interface'
 import { RunState } from './../interpreter'
 

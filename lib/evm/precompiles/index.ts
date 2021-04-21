@@ -1,5 +1,5 @@
-import { Address } from 'ethereumjs-util'
-import Common from '@ethereumjs/common'
+import { Address } from 'sbr-util'
+import Common from '@sbr/common'
 import { PrecompileInput, PrecompileFunc } from './types'
 import { default as p1 } from './01-ecrecover'
 import { default as p2 } from './02-sha256'

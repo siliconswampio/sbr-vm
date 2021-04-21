@@ -1,4 +1,4 @@
-import { Address, BN, keccak256, setLengthRight, setLengthLeft } from 'ethereumjs-util'
+import { Address, BN, keccak256, setLengthRight, setLengthLeft } from 'sbr-util'
 import { ERROR, VmError } from './../../exceptions'
 import { RunState } from './../interpreter'
 import { adjustSstoreGasEIP2929 } from './EIP2929'
@@ -6,7 +6,7 @@ import { adjustSstoreGasEIP2929 } from './EIP2929'
 const MASK_160 = new BN(1).shln(160).subn(1)
 
 /**
- * Proxy function for ethereumjs-util's setLengthLeft, except it returns a zero
+ * Proxy function for sbr-util's setLengthLeft, except it returns a zero
  *
  * length buffer in case the buffer is full of zeros.
  * @param {Buffer} value Buffer which we want to pad

@@ -1,4 +1,4 @@
-[@ethereumjs/vm](../README.md) / exceptions
+[@sbr/vm](../README.md) / exceptions
 
 # Module: exceptions
 

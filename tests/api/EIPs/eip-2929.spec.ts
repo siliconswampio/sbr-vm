@@ -1,8 +1,8 @@
 import tape from 'tape'
-import { Account, Address, BN } from 'ethereumjs-util'
+import { Account, Address, BN } from 'sbr-util'
 import VM from '../../../lib'
-import Common from '@ethereumjs/common'
-import { Transaction } from '@ethereumjs/tx'
+import Common from '@sbr/common'
+import { Transaction } from '@sbr/tx'
 
 // Test cases source: https://gist.github.com/holiman/174548cad102096858583c6fbbb0649a
 tape('EIP 2929: gas cost tests', (t) => {

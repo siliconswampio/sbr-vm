@@ -1,4 +1,4 @@
-import { setLengthLeft, setLengthRight, ecrecover, publicToAddress, BN } from 'ethereumjs-util'
+import { setLengthLeft, setLengthRight, ecrecover, publicToAddress, BN } from 'sbr-util'
 import { PrecompileInput } from './types'
 import { OOGResult, ExecResult } from '../evm'
 const assert = require('assert')

@@ -6,7 +6,7 @@ import {
   TWO_POW256,
   MAX_INTEGER,
   KECCAK256_NULL,
-} from 'ethereumjs-util'
+} from 'sbr-util'
 import {
   addressToBuffer,
   describeLocation,

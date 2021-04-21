@@ -1,4 +1,4 @@
-[@ethereumjs/vm](../README.md) / buildBlock
+[@sbr/vm](../README.md) / buildBlock
 
 # Module: buildBlock
 
@@ -25,10 +25,10 @@
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`opts` | [*BuildBlockOpts*](../interfaces/buildblock.buildblockopts.md) |
+| Name | Type |
+| :------ | :------ |
+| `opts` | [*BuildBlockOpts*](../interfaces/buildblock.buildblockopts.md) |
 
 **Returns:** *Promise*<[*BlockBuilder*](../classes/buildblock.blockbuilder.md)\>
 
-Defined in: [buildBlock.ts:243](https://github.com/ethereumjs/ethereumjs-monorepo/blob/master/packages/vm/lib/buildBlock.ts#L243)
+Defined in: [buildBlock.ts:243](https://github.com/siliconswampio/sbr-vm/blob/master/lib/buildBlock.ts#L243)
