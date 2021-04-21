@@ -1,0 +1,4 @@
+.cachedb
+benchmarks/*.js
+node_modules/
+package-lock.json

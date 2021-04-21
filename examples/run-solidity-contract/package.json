@@ -1,0 +1,11 @@
+{
+  "name": "run-solidity-contract",
+  "private": true,
+  "scripts": {
+    "example": "ts-node index.ts"
+  },
+  "dependencies": {
+    "@ethersproject/abi": "^5.0.12",
+    "solc": "^0.8.1"
+  }
+}
