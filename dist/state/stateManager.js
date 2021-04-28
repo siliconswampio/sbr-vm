@@ -374,7 +374,7 @@ class DefaultStateManager {
             throw new Error('Cannot set state root with uncommitted checkpoints');
         }
         await this._cache.flush();
-        if (stateRoot === this._trie.EMPTY_TRIE_ROOT) {
+        if (stateRoot.equals(this._trie.EMPTY_TRIE_ROOT)) {
             this._trie.root = stateRoot;
             this._cache.clear();
             this._storageTries = {};
